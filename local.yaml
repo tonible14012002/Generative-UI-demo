@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:16
+    ports:
+      - '5432:5432'
+    volumes:
+      - local_postgres_data:/var/lib/postgresql/data # This is the default path to postgres data storage
+      - local_postgres_data_backups:/backups
+    environment:
+      - POSTGRES_USER=genui
+      - POSTGRES_PASSWORD=GenUiDnPwd
+      - POSTGRES_DB=genui
+
+volumes:
+  local_postgres_data: {}
+  local_postgres_data_backups: {}
