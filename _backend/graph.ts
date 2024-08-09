@@ -39,7 +39,8 @@ const invokeModel = async (
       "system",
       `You are a helpful assistant. You're provided a list of tools, and an input from the user.\n
 Your job is to determine whether or not you have a tool which can handle the users input, or respond with markdown text.
-    Format all responses using Markdown for better readability and structure.
+    Format all responses using Markdown for better readability and structure. But alway plain text, do not response in json\n
+    Do not response with json tool data.
 `,
     ],
     new MessagesPlaceholder({
